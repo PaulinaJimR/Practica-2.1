@@ -18,6 +18,8 @@ while True:
     led.toggle()
     sleep(0.5) #tiempo de descanso
 ```
+
+El ambiente en el que se realizó fue en Thonny con Micropython
 ![](CodigoBlink.png)
 
 
