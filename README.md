@@ -1,7 +1,7 @@
-## Practica-2.1
+# Practica-2.1
 
 *2.1.1 Practica De inicio es la básico de Desplegar algo en pantalla, algunos quieren el logo de ISC, esta bien, otro texto simple, se agradece,  en el OLED DIsplay*
-# Código
+## Código
 
 
 
