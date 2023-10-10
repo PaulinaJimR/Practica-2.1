@@ -4,7 +4,7 @@
 
 Lo primero que se realizó fue la programación del led blink, donde se prende y apaga el led de la Pico W
 **Código**
-
+![](CodigoBlink.png)
 
 
 ### *2.1.2 Desplegar la hora de Internet en la Pico usando su Wifi integrada para que interrogue un servidor NTP Time Server, en el OLED DIsplay*
