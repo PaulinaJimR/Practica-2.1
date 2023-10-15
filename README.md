@@ -22,11 +22,10 @@ while True:
     sleep(0.5) #tiempo de descanso
 ```
 
-Despliegue de Led en estado inicial o apagado:
-![](ledapagado.png)
+Led en estado inicial o apagado: | Led encendido:
+---------------------------------|---------------------------------
+![](ledapagado.png) | ![](ledprendido.png)
 
-Despliegue de Led prendido:
-![](ledprendido.jpg)
 
 
 ### *2.1.2 Desplegar la hora de Internet en la Pico usando su Wifi integrada para que interrogue un servidor NTP Time Server, en el OLED DIsplay*
