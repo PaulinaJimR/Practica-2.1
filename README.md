@@ -24,7 +24,7 @@ while True:
 
 Led en estado inicial o apagado: | Led encendido:
 ---------------------------------|---------------------------------
-![](ledapagado.png) | ![](ledprendido.png)
+![](ledapagado.png)              | ![](ledprendido.png)
 
 
 
