@@ -140,6 +140,8 @@ oled.fill(0) #limpia la pantalla oled
 oled.blit(logo,0,0) # logo y punto de inicio de representación
 oled.show() # Muestra el resultado
 ```
+Despliegue de Logo en oled
+![](Logo.png) 
 
 ### *2.1.2 Desplegar la hora de Internet en la Pico usando su Wifi integrada para que interrogue un servidor NTP Time Server, en el OLED DIsplay*
 **Código**
