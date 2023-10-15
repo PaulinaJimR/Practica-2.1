@@ -174,3 +174,66 @@ Despliegue de "Hola mundo :)" en oled
 
 ### *2.1.2 Desplegar la hora de Internet en la Pico usando su Wifi integrada para que interrogue un servidor NTP Time Server, en el OLED DIsplay*
 **Código**
+
+```python
+# #Jiménez Rivera Paulina 20211796
+
+#librerías importadas
+import utime
+import network
+from machine import Pin, I2C #configuración de pines para su comunicación
+from ssd1306 import SSD1306_I2C #comunicación con la pantalla OLED
+import framebuf, sys
+
+#bloque de código para la conexion del raspberry a internet
+print("¡Conectando a Wi-Fi! ", end="")
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+
+# Red wifi con su nombre y contraseña (en este caso se utilizó los datos del teléfono)
+wlan.connect("PJ","19yfnefr20vrm")
+
+# Ciclo
+while not wlan.isconnected():
+  print(".", end="")
+  time.sleep(0.1) # tiempo de espera
+  
+print("¡Conexión con éxito!")
+print(wlan.ifconfig())
+
+#Verificación de dispositivo con una función
+def init_i2c(scl_pin, sda_pin):
+    i2c_dev = I2C(1, scl=Pin(scl_pin), sda=Pin(sda_pin), freq=200000)
+    i2c_addr = [hex(ii) for ii in i2c_dev.scan()]
+    
+    #Condiciones
+    if not i2c_addr:
+        print('Pantalla I2C no encontrada')
+        sys.exit()
+    else:
+        print("I2C Address : {}".format(i2c_addr[0]))
+        print("I2C Configuration: {}".format(i2c_dev))
+        
+    return i2c_dev #variable que retorna
+
+# sda y scl con los pines correspondientes que estén conectados
+i2c = machine.I2C(0, sda=machine.Pin(8), scl=machine.Pin(9), freq=400000)
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+
+import ntptime #importar librería Network Time Protocol (NTP)
+ntptime.settime() # sincroniza la hora local
+
+while True: 
+    hr = utime.localtime() #hora local
+    
+    #Despliegue de hora de internet con el formato correspondiente
+    print("{:02}:{:02}:{:02}".format(hr[3], hr[4], hr[5]))
+    utime.sleep(1) #espera
+    oled.fill(0) #limpia la pantalla oled
+    
+    oled.text("Hora local:", 0, 0)
+    oled.text("{:02d}:{:02d}:{:02d}".format(hr[3], hr[4], hr[5]), 0, 16)
+    oled.show() # Muestra el resultado
+    time.sleep(1)
+```
+![](hora.png) 
