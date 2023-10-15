@@ -143,5 +143,34 @@ oled.show() # Muestra el resultado
 Despliegue de Logo en oled
 ![](Logo.png) 
 
+_Finalmente se realizó una tercer prueba desplegando un "Hola mundo :)" en la pantalla oled_
+
+**------------HOLA MUNDO------------**
+
+**Código**
+```python
+# #Jiménez Rivera Paulina 20211796
+
+#librerías importadas
+import machine
+import ssd1306
+
+# Configuración de pines SDA y SCL para la comunicación I2C
+i2c = machine.I2C(0, sda=machine.Pin(8), scl=machine.Pin(9))
+
+# Configura el objeto SSD1306 para visualización en pantalla OLED
+oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+
+# Limpia la pantalla
+oled.fill(0)
+
+# Escribe "Hola Mundo" en la pantalla OLED
+oled.text("Hola Mundo :)", 0, 0)
+
+oled.show() # Muestra el resultado (texto) en pantalla
+```
+Despliegue de "Hola mundo :)" en oled
+![](holam.png) 
+
 ### *2.1.2 Desplegar la hora de Internet en la Pico usando su Wifi integrada para que interrogue un servidor NTP Time Server, en el OLED DIsplay*
 **Código**
