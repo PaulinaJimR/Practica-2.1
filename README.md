@@ -3,8 +3,9 @@
 ### *2.1.1 Practica De inicio es la básico de Desplegar algo en pantalla, algunos quieren el logo de ISC, esta bien, otro texto simple, se agradece,  en el OLED DIsplay*
 
 El ambiente en el que se realizó fue en Thonny con Micropython, haciendo uso de la Pico W.
-Lo primero que se realizó fue la programación del led blink, donde se prende y apaga el led de la Pico W
+_Lo primero que se realizó fue la programación del led blink, donde se prende y apaga el led de la Pico W_
 
+###### BLINK
 **Código**
 ```python
 # Jiménez Rivera Paulina 20211796
