@@ -236,4 +236,5 @@ while True:
     oled.show() # Muestra el resultado
     time.sleep(1)
 ```
+Despliegue de hora local en oled usando wifi
 ![](hora.png) 
